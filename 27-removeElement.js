@@ -3,6 +3,7 @@ function removeElement(nums, val) {
   while (left < right) {
     if (nums[left] === val) {
       nums[left] = nums[right - 1]
+      nums.splice(right - 1, 1)
       right--
     } else {
       left++
@@ -11,7 +12,7 @@ function removeElement(nums, val) {
   return left
 }
 
-const nums1 = [3,2,2,3], val1 = 3
+const nums1 = [3, 2, 2, 3], val1 = 3
 console.log(removeElement(nums1, val1), nums1) // 2 [2, 2, 2, 3]
 
 const nums2 = [0, 1, 2, 2, 3, 0, 4, 2], val2 = 2
